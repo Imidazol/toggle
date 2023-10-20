@@ -1,0 +1,15 @@
+.toggle {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.toggle:checked {
+  padding: 10px 20px;
+  background-color: #094974;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
