@@ -1,15 +1,36 @@
-.toggle {
-  padding: 10px 20px;
-  background-color: #3498db;
-  color: white;
-  border: none;
-  border-radius: 5px;
+/* Сховати оригінальний чекбокс */
+.checkbox {
+  display: none;
 }
 
-.toggle:checked {
-  padding: 10px 20px;
-  background-color: #094974;
-  color: white;
-  border: none;
-  border-radius: 5px;
+/* інформація для питання: бачив, що використовують стилі із input[type="checkbox"].клас, чи це обов'язково? Аналогічно із label замість класу */
+
+/* Стилізація позначки у перемикач */
+.label {
+  display: inline-block;
+  width: 10em;
+  height: 5em;
+  background-color: #ccc;
+  border-radius: 2.5em;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Стилізація позначки у слайдер */
+.label::after {
+  content: "";
+  display: block;
+  width: 4em;
+  height: 4em;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 0.5em;
+  left: 0.5em;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Зміна положення позначки при увімкненні чекбокса */
+.checkbox:checked + .label::after {
+  transform: translateX(5em);
 }
