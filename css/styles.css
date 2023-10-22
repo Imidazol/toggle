@@ -1,25 +1,27 @@
 /* Сховати оригінальний чекбокс */
+
+/* інформація для питання: бачив, що використовують стилі із input[type="checkbox"].клас, чи це обов'язково? Аналогічно із label замість класу */
+/* користувався ChatGPT і https://github.com/WebDevSimplified/css-slider-toggle/tree/main */
+body {
+  background-color: #ffffff;
+}
+
 .checkbox {
   display: none;
 }
 
-/* інформація для питання: бачив, що використовують стилі із input[type="checkbox"].клас, чи це обов'язково? Аналогічно із label замість класу */
-/* користувався ChatGPT і https://github.com/WebDevSimplified/css-slider-toggle/tree/main */
-/* Наразі в перемикачі лише зміщується слайдер */
-
-/* Стилізація позначки у перемикач */
-.label {
+.switch {
   display: inline-block;
   width: 10em;
   height: 5em;
+  margin: 2em;
   background-color: #ccc;
   border-radius: 2.5em;
   position: relative;
   cursor: pointer;
 }
 
-/* Стилізація позначки у слайдер */
-.label::after {
+.switch::after {
   content: "";
   display: block;
   width: 4em;
@@ -32,7 +34,11 @@
   transition: transform 0.5s ease-in-out;
 }
 
-/* Зміна положення позначки при увімкненні чекбокса */
-.checkbox:checked + .label::after {
+.checkbox:checked + .switch::after {
+  background-color: #000000;
+  transition: transform 0.5s ease-in-out;
+}
+
+.checkbox:checked + .switch::after {
   transform: translateX(5em);
 }
