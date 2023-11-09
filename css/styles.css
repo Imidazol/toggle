@@ -33,13 +33,13 @@ body {
   transition: transform 0.5s ease-in-out;
 }
 
-.checkbox:checked + .switch::after {
+.checkbox:checked ~ .switch::after {
   transform: translateX(5em);
   background-color: #ffffff;
   transition: transform 0.5s ease-in-out;
 }
 
-.checkbox:checked + .switch {
+.checkbox:checked ~ .switch {
   background-color: #555555;
   transition: transform 0.5s ease-in-out;
 }
