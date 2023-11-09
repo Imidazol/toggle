@@ -42,7 +42,6 @@ body {
 }
 
 .checkbox:checked + .switch {
-  /* transform: translateX(5em); */
   background-color: #555555;
   transition: transform 0.5s ease-in-out;
 }
