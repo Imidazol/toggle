@@ -14,10 +14,11 @@ body {
   width: 10em;
   height: 5em;
   margin: 2em;
-  background-color: #0088ff;
+  background-color: #568f95;
   border-radius: 2.5em;
   position: relative;
   cursor: pointer;
+  /* overflow: hidden; */
 }
 
 .switch::after {
@@ -25,7 +26,7 @@ body {
   display: block;
   width: 4em;
   height: 4em;
-  background-color: #ffff00;
+  background-color: #d37979;
   border-radius: 50%;
   position: absolute;
   top: 0.5em;
@@ -35,28 +36,32 @@ body {
 
 .checkbox:checked ~ .switch::after {
   transform: translateX(5em);
-  background-color: #ffffff;
+  position: relative;
+  background-color: rgb(67, 167, 9), 0.664);
+  /* overflow: hidden; */
   transition: transform 0.5s ease;
-  z-index: 999;
 }
 
 .checkbox:checked ~ .switch {
   background-color: #555555;
+  /* position: relative;
+  overflow: hidden; */
   transition: transform 0.5s ease;
-  z-index: 9999;
 }
 
 .checkbox:checked ~ .rotate {
   position: absolute;
   top: 0.5em;
   left: 0.5em;
-  z-index: 9999;
   width: 4em;
   height: 4em;
   margin: 2em;
-  background-color: #000000;
+  background: linear-gradient(to right, rgb(175, 5, 5), rgb(214, 140, 140));
   border-radius: 2.5em;
-  transform: rotatey(90deg) translateX(11em);
-  transition: transform 0.5s ease-in;
-  overflow: hidden;
+  transform: rotatey(90deg) translateX(11.5em);
+  transition: transform 1.5s ease;
+}
+
+.checkbox:checked + body {
+  background-color: rgb(255, 255, 255);
 }
