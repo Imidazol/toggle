@@ -30,16 +30,33 @@ body {
   position: absolute;
   top: 0.5em;
   left: 0.5em;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease;
 }
 
 .checkbox:checked ~ .switch::after {
   transform: translateX(5em);
   background-color: #ffffff;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease;
+  z-index: 999;
 }
 
 .checkbox:checked ~ .switch {
   background-color: #555555;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease;
+  z-index: 9999;
+}
+
+.checkbox:checked ~ .rotate {
+  position: absolute;
+  top: 0.5em;
+  left: 0.5em;
+  z-index: 9999;
+  width: 4em;
+  height: 4em;
+  margin: 2em;
+  background-color: #000000;
+  border-radius: 2.5em;
+  transform: rotatey(90deg) translateX(11em);
+  transition: transform 0.5s ease;
+  overflow: hidden;
 }
