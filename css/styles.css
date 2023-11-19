@@ -29,7 +29,7 @@ body {
   position: absolute;
   top: 0.5em;
   left: 0.5em;
-  z-index: 10000;
+  /* z-index: 10000; */
 }
 
 .toggle_switch-front {
@@ -55,6 +55,12 @@ body {
 .toggle:hover .toggle_background {
   background-color: #646464;
 }
+
+/* .toggle:hover .toggle_switch {
+  background-color: #ffffff;
+  transform: translateX(5em);
+  transition: transform 0.5s ease;
+} */
 
 .toggle:hover .toggle_switch-back {
   background-color: #ffffff;
