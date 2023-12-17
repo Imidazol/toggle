@@ -6,6 +6,8 @@ body {
 }
 
 .toggle {
+  width: 10em;
+  height: 5em;
   position: relative;
   display: inline-block;
   cursor: pointer;
@@ -13,66 +15,68 @@ body {
 }
 
 .toggle_background {
-  width: 10em;
-  height: 5em;
+  position: absolute;
+  width: inherit;
+  height: inherit;
   border-radius: 2.5em;
   background-color: #0088ff;
-  position: absolute;
   z-index: -1;
 }
 
 .toggle_switch {
   display: block;
-  position: absolute;
-  top: 0.5em;
-  left: 0.5em;
+  position: relative;
+  width: 2.5em;
+  height: 2.5em;
   transform-style: preserve-3d;
-  z-index: 1;
+  transform: rotateX(45deg) rotateY(45deg);
   perspective: 100em;
+  margin: 1.25em;
 }
 
-.toggle_switch-front {
-  width: 4em;
-  height: 4em;
-  border-radius: 50%;
-  background: #ffff00;
+.face {
+  width: inherit;
+  height: inherit;
   position: absolute;
-  /* z-index: 1000; */
-  /* overflow: hidden; */
+  border: 0.02em solid #fff;
 }
 
-.toggle_switch-back {
-  width: 4em;
-  height: 4em;
-  border-radius: 50%;
-  background: #ffff00;
-  position: absolute;
-  /* transform: rotateY(90deg); */
-  /* z-index: 100; */
-  /* overflow: hidden; */
+.side-1 {
+  transform: translateZ(1.25em);
+  background-color: #e74c3c;
+}
+
+.side-2 {
+  transform: rotateY(90deg) translateZ(1.25em);
+  background-color: #3498db;
+}
+.side-3 {
+  transform: rotateY(180deg) translateZ(1.25em);
+  background-color: #2ecc71;
+}
+.side-4 {
+  transform: rotateY(-90deg) translateZ(1.25em);
+  background-color: #f39c12;
+}
+.side-5 {
+  transform: rotateX(90deg) translateZ(1.25em);
+  background-color: #9b59b6;
+}
+.side-6 {
+  transform: rotateX(-90deg) translateZ(1.25em);
+  background-color: #34495e;
 }
 
 .toggle:hover .toggle_background {
-  background-color: #646464;
+  background-color: #086605;
+  transition: background-color 0.5s linear;
 }
 
 .toggle:hover .toggle_switch {
-  transform: translateX(5em);
-  transition: transform 2s ease;
-  /* z-index: 1; */
+  transform: translateX(5em) rotateX(45deg) rotateY(180deg) rotateZ(135deg);
+  transition: transform 1s ease;
 }
 
-.toggle:hover .toggle_switch-back {
-  background: radial-gradient(#1eff00, #ffffff);
-  transform: rotateY(180deg);
-  transition: transform 2s ease;
-  z-index: 10;
-}
-
-.toggle:hover .toggle_switch-front {
-  background: radial-gradient(#ffffff, #fc0303));
-  transform: rotateY(90deg);
-  transition: transform 2s ease;
-  z-index: 100;
-  /* overflow: hidden; */
+.toggle:hover::before {
+  background-color: #ffbb00;
 }
