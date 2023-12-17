@@ -1,5 +1,3 @@
-/* інформація для питання: бачив, що використовують стилі із input[type="checkbox"].клас, чи це обов'язково? Аналогічно із label замість класу */
-/* користувався ChatGPT і https://github.com/WebDevSimplified/css-slider-toggle/tree/main */
 body {
   background-color: #ffffff;
   font-size: 50px;
@@ -11,7 +9,7 @@ body {
   position: relative;
   display: inline-block;
   cursor: pointer;
-  margin: 2em;
+  margin: 1em 5em;
 }
 
 .toggle_background {
@@ -75,8 +73,4 @@ body {
 .toggle:hover .toggle_switch {
   transform: translateX(5em) rotateX(45deg) rotateY(180deg) rotateZ(135deg);
   transition: transform 1s ease;
-}
-
-.toggle:hover::before {
-  background-color: #ffbb00;
 }
